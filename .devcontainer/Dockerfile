@@ -32,7 +32,7 @@ COPY requirements.txt /tmp/
 RUN echo "(*) Installing python packages with pip..." \
     && su - $USERNAME -c "pip install -r /tmp/requirements.txt" \
     && apt-get -y install --no-install-recommends graphviz \
-    && rm /tmp/requirements.txt
+    && rm -f /tmp/requirements.txt
     
 # Add .local/bin to path
 ENV PATH="/home/vscode/.local/bin:${PATH}"
