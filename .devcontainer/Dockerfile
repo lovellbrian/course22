@@ -17,7 +17,7 @@ RUN echo "(*) Installing python and system tools..." \
 #  Install nvtop
 RUN echo "(*) Adding Mutiverse repository and installing nvtop..." \
     && apt-add-repository multiverse \
-    &&  apt-get update \
+    && apt-get update --fix-missing\
     && apt-get install nvtop
 
 # Need to clean up packages or we may run out of space in the cache
