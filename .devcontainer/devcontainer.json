@@ -3,7 +3,7 @@
 {
 	"name": "GPU",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "lovellbrian/gpu"
+	"image": "lovellbrian/gpu",
 
 	"runArgs": [
 		"--gpus=all"
