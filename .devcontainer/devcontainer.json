@@ -1,13 +1,13 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-	"name": "GPU",
+	"name": "CPU",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "lovellbrian/gpu",
+	"image": "lovellbrian/cpu",
 
-	"runArgs": [
-		"--gpus=all"
-	  ],
+	// "runArgs": [
+	// 	"--gpus=all"
+	//   ],
 
 	  "customizations": {
 		"vscode": {
