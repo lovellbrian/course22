@@ -6,9 +6,9 @@
 	"image": "lovellbrian/gpu",
 
 	"runArgs": [
-		"--gpus=all"
+		"--gpus=all --shm-size=2g"
 	  ],
-
+    
 	  "customizations": {
 		"vscode": {
 		  "extensions": [
