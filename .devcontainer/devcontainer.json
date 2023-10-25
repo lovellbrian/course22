@@ -6,7 +6,7 @@
 	"image": "lovellbrian/gpu",
 
 	"runArgs": [
-		"--gpus=all --shm-size=2g"
+		"--gpus=all", "--shm-size=2g"
 	  ],
     
 	  "customizations": {
