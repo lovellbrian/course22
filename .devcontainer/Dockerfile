@@ -6,6 +6,20 @@ RUN echo "(*) Update Ubuntu22 packages..." \
     && apt update \
     && apt upgrade -y
 
+ARG USERNAME=vscode
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
+# Create the non-root user
+RUN groupadd --gid $USER_GID $USERNAME \
+    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
+    #
+    # [Optional] Add sudo support. Omit if you don't need to install software after connecting.
+    && apt-get update \
+    && apt-get install -y sudo \
+    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
+    && chmod 0440 /etc/sudoers.d/$USERNAME
+
 # install python and system tools
 RUN echo "(*) Installing python and system tools..." \
     && apt-get install software-properties-common wget curl python3-dev python3-pip python3-wheel python3-setuptools -y \
@@ -30,12 +44,11 @@ RUN apt-get install libcudnn8-dev=8.9.0.*-1+cuda11.8 -y
 # Install python packages with pip
 COPY requirements.txt /tmp/
 RUN echo "(*) Installing python packages with pip..." \
-    && su - $USERNAME -c "pip install -r /tmp/requirements.txt" \
+    && su - $USERNAME -c "pip install --user -r /tmp/requirements.txt" \
     && apt-get -y install --no-install-recommends graphviz \
     && rm /tmp/requirements.txt
-    
-# Add .local/bin to path
-ENV PATH="/home/vscode/.local/bin:${PATH}"
+RUN cp /usr/bin/python3 /home/$USERNAME/.local/bin
+
 
 # Add welcome message
 COPY welcome-message.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt
