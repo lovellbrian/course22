@@ -3,8 +3,8 @@ FROM nvidia/cuda:11.8.0-devel-ubuntu22.04
 
 # Update Ubuntu software
 RUN echo "(*) Update Ubuntu22 packages..." \
-    && apt update \
-    && apt upgrade -y
+    && apt-get update --fix-missing\
+    && apt-get upgrade -y
 
 ARG USERNAME=vscode
 ARG USER_UID=1000
@@ -23,7 +23,7 @@ RUN groupadd --gid $USER_GID $USERNAME \
 # install python and system tools
 RUN echo "(*) Installing python and system tools..." \
     && apt-get install software-properties-common wget curl python3-dev python3-pip python3-wheel python3-setuptools -y \
-    && apt-get install htop zlib1g g++ freeglut3-dev libx11-dev libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev libfreeimage-dev -y \
+    && apt-get install vim htop zlib1g g++ freeglut3-dev libx11-dev libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev libfreeimage-dev -y \
     && apt-get install --no-install-recommends apt-utils -y \
     && apt-get -y install procps lsb-release \
     && /usr/bin/python3 -m pip install --upgrade pip
