@@ -3,8 +3,8 @@ FROM nvidia/cuda:11.8.0-devel-ubuntu22.04
 
 # Update Ubuntu software
 RUN echo "(*) Update Ubuntu22 packages..." \
-    && apt update \
-    && apt upgrade -y
+    && apt-get update --fix-missing\
+    && apt-get upgrade -y
 
 # install python and system tools
 RUN echo "(*) Installing python and system tools..." \
