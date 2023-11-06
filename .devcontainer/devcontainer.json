@@ -5,9 +5,10 @@
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "lovellbrian/cpu",
 
-	// "runArgs": [
-	// 	"--gpus=all"
-	//   ],
+	"runArgs": [
+		// "--gpus=all",
+		"--shm-size=2g"
+	  ],
 
 	  "customizations": {
 		"vscode": {
