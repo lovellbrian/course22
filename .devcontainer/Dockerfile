@@ -1,5 +1,5 @@
 # Specify NVIDIA Devel Image
-FROM nvidia/cuda:11.8.0-devel-ubuntu22.04
+FROM nvidia/cuda:12.2.2-cudnn8-devel-ubuntu22.04 
 
 # Update Ubuntu software
 RUN echo "(*) Update Ubuntu22 packages..." \
@@ -38,8 +38,10 @@ RUN echo "(*) Adding Mutiverse repository and installing nvtop..." \
 RUN apt-get clean
 
 # Install libcudnn
-RUN apt-get install libcudnn8=8.9.0.*-1+cuda11.8 
-RUN apt-get install libcudnn8-dev=8.9.0.*-1+cuda11.8 -y
+# RUN apt-get install libcudnn8=8.9.0.*-1+cuda11.8 -y
+# RUN apt-get clean
+# RUN apt-get install libcudnn8-dev=8.9.0.*-1+cuda11.8 -y
+# RUN apt-get clean
 
 # Install python packages with pip
 COPY requirements.txt /tmp/

@@ -5,7 +5,8 @@
     "dockerfile": "Dockerfile"
 },
   "runArgs": [
-    "--gpus=all", "--shm-size=2g"
+    "--gpus=all",
+    "--shm-size=2g"
   ],
     "remoteEnv": {
     "PATH": "/home/vscode/.local/bin:${containerEnv:PATH}",
