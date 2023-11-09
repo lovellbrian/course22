@@ -1,5 +1,5 @@
 # Specify NVIDIA Devel Image
-FROM nvidia/cuda:12.2.2-cudnn8-devel-ubuntu22.04 
+FROM nvidia/cuda:11.8.0-devel-ubuntu22.04
 
 # Update Ubuntu software
 RUN echo "(*) Update Ubuntu22 packages..." \
