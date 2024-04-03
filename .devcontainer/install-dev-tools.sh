@@ -6,6 +6,7 @@
 pip install --upgrade jupyter
 pip install jupyterlab-rise
 pip install fastbook
+sudo apt-get install -y node.js
 
 # Commands for presentation
 # cd slides
