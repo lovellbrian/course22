@@ -7,7 +7,6 @@ pip install --upgrade jupyter
 pip install jupyterlab-rise
 pip install fastbook
 sudo apt-get -y update
-sudo apt-get install -y node.js
 pip install -Uqq fastai
 pip install pip_search
 pip install -U ipywidgets==8.0.0
