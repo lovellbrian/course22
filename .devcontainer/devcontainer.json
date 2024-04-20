@@ -3,7 +3,7 @@
 {
 	"name": "CPU",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "lovellbrian/cpu",
+	"image": "lovellbrian/cpufrozen",
 
 	"runArgs": [
 		// "--gpus=all",
