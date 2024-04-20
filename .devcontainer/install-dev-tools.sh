@@ -1,11 +1,12 @@
+#!/bin/bash
+
 # Put any custom installs in this file
 
 # Put files in USER_FOLDER. Only do this once. 
-
 USER_FOLDER="/home/vscode/.local"
 echo "USER_FOLDER = $USER_FOLDER"
 if [ ! -d "$USER_FOLDER" ]; then
-  echo -e "Creating the /home/vscode/.local python respository\n" 
+  echo -e "Creating the $USER_FOLDER python respository\n" 
   # install python code to ~/.vscode/.local
   pip install --upgrade pip
   sudo apt-get update
@@ -17,6 +18,9 @@ if [ ! -d "$USER_FOLDER" ]; then
   # Version 8 needed for RISE slides. Generates a red compatibility error. 
   pip install -U ipywidgets==8.0.0
   # Put extra packages here
+
+else
+  echo -e "User folder $USER_FOLDER already exists\n"
 fi
 
 
