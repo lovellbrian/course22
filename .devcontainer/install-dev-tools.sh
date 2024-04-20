@@ -9,12 +9,12 @@ if [ ! -d "$USER_FOLDER" ]; then
  
   # install python code to ~/.vscode/.local
   pip install --upgrade pip
+  sudo apt-get update
   sudo apt-get install -y libcairo2-dev pkg-config python3-dev
-  pwd
   pip install -r .devcontainer/requirements.txt
 
   # Let's have a user version of python3.
-  sudo cp /usr/bin/python3 /home/vscode/.local/bin
+  cp /usr/bin/python3 /home/vscode/.local/bin
 
   # Version 8 needed for RISE slides. Generates a red compatibility error. 
   pip install -U ipywidgets==8.0.0
