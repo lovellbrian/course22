@@ -11,6 +11,7 @@ if [ ! -d "$USER_FOLDER" ]; then
   pip install --upgrade pip
   sudo apt-get update
   sudo apt-get install -y libcairo2-dev pkg-config python3-dev
+  sudo apt install -y libgirepository1.0-dev
   pip install -r .devcontainer/requirements.txt
   # Let's have a user version of python3.
   cp /usr/local/bin/python3.10 /home/vscode/.local/bin
