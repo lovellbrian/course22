@@ -6,41 +6,18 @@ RUN echo "(*) Update Ubuntu22 packages..." \
     && apt-get update --fix-missing\
     && apt-get upgrade -y
 
-ARG USERNAME=vscode
-ARG USER_UID=1000
-ARG USER_GID=$USER_UID
-
-# Create the non-root user
-RUN groupadd --gid $USER_GID $USERNAME \
-    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
-    #
-    # [Optional] Add sudo support. Omit if you don't need to install software after connecting.
-    && apt-get update \
-    && apt-get install -y sudo \
-    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
-    && chmod 0440 /etc/sudoers.d/$USERNAME
-
 # install python and system tools
 RUN echo "(*) Installing python and system tools..." \
-    && apt-get install software-properties-common wget curl python3-dev python3-pip python3-wheel python3-setuptools -y \
-    && apt-get install vim htop zlib1g g++ freeglut3-dev libx11-dev libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev libfreeimage-dev -y \
-    && apt-get install --no-install-recommends apt-utils -y \
-    && apt-get install procps lsb-release -y
-    
+  && apt-get install software-properties-common wget curl python3-dev python3-pip python3-wheel python3-setuptools -y \
+  && apt-get install vim htop zlib1g g++ freeglut3-dev libx11-dev libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev libfreeimage-dev -y \
+  && apt-get install --no-install-recommends apt-utils -y \
+  && apt-get install procps lsb-release -y
+  
 #  Install nvtop
 RUN echo "(*) Adding Mutiverse repository and installing nvtop..." \
-    && apt-add-repository multiverse \
-    && apt-get update --fix-missing\
-    && apt-get install nvtop
-
-# Need to clean up packages or we may run out of space in the cache
-RUN apt-get clean
-
-# Install libcudnn
-# RUN apt-get install libcudnn8=8.9.0.*-1+cuda11.8 -y
-# RUN apt-get clean
-# RUN apt-get install libcudnn8-dev=8.9.0.*-1+cuda11.8 -y
-# RUN apt-get clean
+  && apt-add-repository multiverse \
+  && apt-get update --fix-missing\
+  && apt-get install nvtop
 
 RUN echo "(*) Installing packages..." \
   && apt-get update \
