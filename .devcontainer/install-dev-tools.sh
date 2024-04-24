@@ -4,7 +4,6 @@
 
 # Put files in USER_FOLDER. Only do this once. 
 USER_FOLDER="/home/vscode/.local"
-echo "USER_FOLDER = $USER_FOLDER"
 if [ ! -d "$USER_FOLDER" ]; then
   echo -e "Creating the $USER_FOLDER python respository\n" 
   # install python code to ~/.vscode/.local
