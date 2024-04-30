@@ -14,7 +14,7 @@ if [ ! -d "$USER_FOLDER" ]; then
 
   # Let's have a user version of python3.
   cp /usr/local/bin/python3.10 /home/vscode/.local/bin
-  ln -s /home/vscode/.local/python3.10  /home/vscode/.local/python3
+  ln -s /home/vscode/.local/bin/python3.10  /home/vscode/.local/bin/python3
 
   # Version 8 needed for RISE slides. Generates a red compatibility error. 
   pip install -U ipywidgets==8.0.0
