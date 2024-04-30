@@ -13,7 +13,7 @@ if [ ! -d "$USER_FOLDER" ]; then
   pip install -r .devcontainer/requirements.txt
 
   # Let's have a user version of python3.
-  sudo cp /usr/bin/python3.10 /home/vscode/.local/bin
+  cp /usr/local/bin/python3.10 /home/vscode/.local/bin
   ln -s /home/vscode/.local/python3.10  /home/vscode/.local/python3
 
   # Version 8 needed for RISE slides. Generates a red compatibility error. 
