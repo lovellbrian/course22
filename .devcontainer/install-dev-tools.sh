@@ -9,7 +9,6 @@ if [ ! -d "$USER_FOLDER" ]; then
  
   # install python code to ~/.vscode/.local
   pip install --upgrade pip
-  sudo apt-get install -y libcairo2-dev pkg-config python3-dev
   pip install -r .devcontainer/requirements.txt
 
   # Let's have a user version of python3.
