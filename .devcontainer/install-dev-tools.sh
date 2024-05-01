@@ -3,17 +3,18 @@
 
 # Put files in USER_FOLDER. Only do this once. 
 
-echo -e "Creating the /home/vscode/.local python respository\n" 
-
 USER_FOLDER="/home/vscode/.local"
 if [ ! -d "$USER_FOLDER" ]; then
+echo -e "Creating the /home/vscode/.local python respository\n" 
  
   # install python code to ~/.vscode/.local
   pip install --upgrade pip
-  # sudo apt-get install -y libcairo2-dev pkg-config python3-dev
+  sudo apt-get update
+  sudo apt-get install -y libcairo2-dev pkg-config python3-dev libgirepository1.0-dev
   pip install -r .devcontainer/requirements.txt
 
   # Let's have a user version of python3.
+  echo "got to here"
   cp /usr/local/bin/python3.10 /home/vscode/.local/bin/python3.10
   ln -s /home/vscode/.local/bin/python3.10  /home/vscode/.local/bin/python3
 
@@ -22,6 +23,8 @@ if [ ! -d "$USER_FOLDER" ]; then
 
   # Put extra packages here
 
+else
+echo -e "The /home/vscode/.local python respository is already there\n" 
 fi
 
 
