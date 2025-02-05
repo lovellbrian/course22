@@ -59,7 +59,7 @@ fqdn==1.5.1
 frozenlist==1.4.1
 fsspec==2023.10.0
 ghapi==1.0.4
-gradio==4.1.13
+gradio==4.1.2
 gradio_client==0.7.0
 graphviz==0.20.1
 h11==0.14.0
