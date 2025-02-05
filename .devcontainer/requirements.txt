@@ -59,7 +59,7 @@ fqdn==1.5.1
 frozenlist==1.4.1
 fsspec==2023.10.0
 ghapi==1.0.4
-gradio==4.1.1
+gradio==4.1.13
 gradio_client==0.7.0
 graphviz==0.20.1
 h11==0.14.0
@@ -140,6 +140,7 @@ nvidia-nccl-cu12==2.18.1
 nvidia-nvjitlink-cu12==12.3.52
 nvidia-nvtx-cu12==12.1.105
 oauthlib==3.2.0
+olefile==0.47
 orjson==3.9.10
 overrides==7.4.0
 packaging==23.2
@@ -148,7 +149,7 @@ pandocfilters==1.5.0
 parso==0.8.3
 patsy==0.5.3
 pexpect==4.8.0
-Pillow==10.1.0
+pillow==10.4.0
 pip-search==0.0.12
 platformdirs==3.11.0
 plotly==5.18.0
