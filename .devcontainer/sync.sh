@@ -5,15 +5,15 @@
 # Usage: ./sync.sh <file1> <file2> ... <fileN>
 git stash
 sleep 1
-git checkout cpu && git checkout --patch cpufrozen -- $@
+git checkout cpu && yes | git checkout --patch gpu -- $@
 sleep 1
 git add $@ && git commit -m "Sync" && git push
 sleep 1
-git checkout gpufrozen && git checkout --patch cpufrozen -- $@
+git checkout gpufrozen && yes | git checkout --patch gpu -- $@
 sleep 1
-git add $@ && git commit -m "Sync" && git push
+git add $@ && yes | git commit -m "Sync" && git push
 sleep 1
-git checkout cpufrozen && git checkout --patch cpufrozen -- $@
+git checkout cpufrozen && yes | git checkout --patch gpu -- $@
 sleep 1
 git add $@ && git commit -m "Sync" && git push
 sleep 1
