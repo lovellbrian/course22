@@ -13,7 +13,7 @@ if [ ! -d "$USER_FOLDER" ]; then
   cp /usr/local/bin/python3.10 /home/vscode/.local/bin
   ln -s /home/vscode/.local/bin/python3.10 /home/vscode/.local/bin/python3
   # Version 8 needed for RISE slides. Generates a red compatibility error. 
-  pip install -U ipywidgets==8.0.0
+  # pip install -U ipywidgets==8.0.0
   # Put extra packages here
 
 else
