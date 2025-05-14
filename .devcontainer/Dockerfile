@@ -23,7 +23,8 @@ RUN echo "(*) Installing packages..." \
   && apt-get update \
   && apt-get -y install --no-install-recommends graphviz \
   && apt-get install -y libcairo2-dev pkg-config python3-dev \
-  && apt-get install -y libgirepository1.0-dev
+  && apt-get install -y libgirepository1.0-dev \
+  && apt-get install -y qtwayland5
 
 ENV PATH="/home/vscode/.local/bin:${PATH}"
 
